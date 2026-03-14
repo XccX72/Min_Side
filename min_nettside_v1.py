@@ -169,6 +169,9 @@ def keys(event):
         meny()
     elif key == "Escape":
         window.destroy()
+    else:
+        return
+    """
     elif key == "1" and lås == True:
         about_me()
     elif key == "2" and lås == True:
@@ -177,8 +180,7 @@ def keys(event):
         help_keys()
     elif key == "4" and lås == True:
         mol_kalkulator()
-    else:
-        return
+    """
 window.bind_all("<KeyPress>", keys)
 
 window.focus_force()
