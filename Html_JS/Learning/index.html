@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = en>
+    <head>
+        <title> Heihei</title>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="" width = device-width, initial-scale=1.0>
+
+        <style>
+            body { 
+                font-family: sans-serif; 
+                line-height: 1.6;
+                padding: 20px;
+                background-color: #f4f4f4;
+
+            }
+            .widget-container {
+                background: fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 315px;
+                border: none;
+                border-radius: 8px;
+            }
+            canvas {
+                border: 1px solid #ddd;
+                background: #fff;
+                width: 100%;
+                max-width: 400px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1> Eksempler På Widgets [h1 tittel] </h1>
+        
+        <section class = "widget-container">
+            ### Interaktive html- elementer
+            <details>
+                <summary>Mer Info</summary> 
+                <p> Dette er en innebygd HTML funksjon som er en "accordion" uten JV</p>
+            </details>
+
+            <br>
+
+            <label for = "farge">Velg en farge (input-widhet(entry???)) ></label>
+            <input type = "color" id = "farge" name = "farge" value = "#e66465">
+        </section>
+
+        <section class = "widget-container">
+            ### Ekstern widhet
+            <iframe src = "https://www.youtube.com/" title = "Youtube"></iframe>
+        </section>
+
+        <section class = "widget-container">
+            ### Dynamisk widget (Canvas)
+            <p> Denne sirkelen er tegner med JV på et element</p>
+            <canvas id = "minGrafikk" width = "200" height = "100"> </canvas>
+        </section>
+
+        <script>
+            // Tegner sirkel i canvas tingen
+            const c = document.getElementById("minGrafikk");
+            const ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(100, 50, 40, 0, 2 * Math.PI);
+            ctx.fillStyle = "#007bff";
+            ctx.fill();
+            ctx.stroke();
+        </script>
+
+    </body>
+
+
+</html>

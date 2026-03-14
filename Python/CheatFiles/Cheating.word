@@ -1,0 +1,19 @@
+df:
+spill       konsoll     Timer
+Minecraft   ps5         5
+Fortnite    PC          3
+Roblox      PC          6
+Mario       Switch      7
+
+
+df["Kolonne"].values() viser kun navnet og fjerner alt det unødvendige som index
+
+df["Kolonne"].value_count() teller hvor mange ganger en unik verdi dukker opp i den kolonnen 
+du valgte. 
+df["konsoll"].value_count() vil vise: ps5:1, PC:2, Switch:1
+
+df["Kolonne"].sort_values() sortere kolonnen du valgte med bruk av ascending = True/False
+eller f:eks by="Timer", 
+df.sort_values(by="Timer", ascending=True)
+
+

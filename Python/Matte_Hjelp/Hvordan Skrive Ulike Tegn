@@ -1,0 +1,39 @@
+# --- Logaritmer ---
+ln(x)       : ln(x)         
+log10(x)    : log(x, 10)    
+log2(x)     : log(x, 2)     
+log_b(x)    : log(x, b)     
+
+# --- Eksponenter ---
+e^x         : exp(x)        
+
+# --- Trigonometriske funksjoner ---
+sin(x)      : sin(x)
+cos(x)      : cos(x)
+tan(x)      : tan(x)
+csc(x)      : csc(x)
+sec(x)      : sec(x)
+cot(x)      : cot(x)
+
+# --- Inverse trigonometriske funksjoner ---
+arcsin(x)   : asin(x)
+arccos(x)   : acos(x)
+arctan(x)   : atan(x)
+arccsc(x)   : acsc(x)
+arcsec(x)   : asec(x)
+arccot(x)   : acot(x)
+
+# --- Hyperbolske funksjoner ---
+sinh(x)     : sinh(x)
+cosh(x)     : cosh(x)
+tanh(x)     : tanh(x)
+coth(x)     : coth(x)
+sech(x)     : sech(x)
+csch(x)     : csch(x)
+
+# --- Andre vanlige funksjoner ---
+√x          : sqrt(x)
+abs(x)      : Abs(x)
+factorial(n): factorial(n)
+symbolsk sum: Sum(f(x), (x, a, b))
+symbolsk produkt: Product(f(x), (x, a, b))
