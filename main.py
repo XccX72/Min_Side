@@ -16,9 +16,13 @@ def clear_content():
     for widget in content_frame.winfo_children():
         widget.destroy()
 
-
 #proff delen
-def proff():
+def proff(): #For informasjons knappen
+    clear_content()
+    pass
+
+def klokke(): #For Time knappen
+    clear_content()
     pass
 
 #About me fane
@@ -128,6 +132,16 @@ meny_mol_kalkulator_button = ttk.Button(
     text = "Mol Calc"
 )
 meny_mol_kalkulator_button.pack(
+    ipady = 20
+)
+
+meny_time_button = ttk.Button(
+    meny_frame, 
+    text = "Time", 
+    command = klokke,
+    width= 33
+)
+meny_time_button.pack(
     ipady = 20
 )
 #-------------------------------------------------

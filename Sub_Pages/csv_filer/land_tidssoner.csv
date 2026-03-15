@@ -1,0 +1,122 @@
+Land,Tidsone,UTC offset
+USA 1,America/New_York,UTC-4
+USA 2,America/Chicago,UTC-5
+USA 3,America/Denver,UTC-6
+USA 4,America/Los_Angeles,UTC-7
+USA 5,America/Anchorage,UTC-8
+USA 6,Pacific/Honolulu,UTC-10
+USA 7,America/Adak,UTC-10
+USA 8,Pacific/Samoa,UTC-11
+USA 9,Pacific/Guam,UTC+10
+Brazil 1,America/Noronha,UTC-2
+Brazil 2,America/Fortaleza,UTC-3
+Brazil 3,America/Sao_Paulo,UTC-3
+Brazil 4,America/Manaus,UTC-4
+China,Asia/Shanghai,UTC+8
+India,Asia/Kolkata,UTC+5
+Russia 1,Europe/Kaliningrad,UTC+2
+Russia 2,Europe/Moscow,UTC+3
+Russia 3,Asia/Yekaterinburg,UTC+5
+Russia 4,Asia/Novosibirsk,UTC+7
+Russia 5,Asia/Krasnoyarsk,UTC+8
+Russia 6,Asia/Irkutsk,UTC+8
+Russia 7,Asia/Yakutsk,UTC+9
+Russia 8,Asia/Vladivostok,UTC+10
+Russia 9,Asia/Magadan,UTC+11
+Russia 10,Asia/Kamchatka,UTC+12
+Australia 1,Australia/Perth,UTC+8
+Australia 2,Australia/Adelaide,UTC+9
+Australia 3,Australia/Darwin,UTC+9
+Australia 4,Australia/Brisbane,UTC+10
+Australia 5,Australia/Sydney,UTC+11
+Australia 6,Australia/Hobart,UTC+11
+Australia 7,Australia/Lord_Howe,UTC+11
+Canada 1,America/St_Johns,UTC-2
+Canada 2,America/Halifax,UTC-3
+Canada 3,America/Toronto,UTC-4
+Canada 4,America/Winnipeg,UTC-5
+Canada 5,America/Edmonton,UTC-6
+Canada 6,America/Vancouver,UTC-7
+Canada 7,America/Whitehorse,UTC-7
+Canada 8,America/Yellowknife,UTC-6
+Canada 9,America/Inuvik,UTC-7
+Argentina,America/Argentina/Buenos_Aires,UTC-3
+Mexico 1,America/Tijuana,UTC-7
+Mexico 2,America/Hermosillo,UTC-7
+Mexico 3,America/Chihuahua,UTC-6
+Mexico 4,America/Mexico_City,UTC-5
+Mexico 5,America/Monterrey,UTC-5
+Mexico 6,America/Cancun,UTC-5
+Japan,Asia/Tokyo,UTC+9
+South Korea,Asia/Seoul,UTC+9
+Indonesia 1,Asia/Jakarta,UTC+7
+Indonesia 2,Asia/Makassar,UTC+8
+Indonesia 3,Asia/Jayapura,UTC+9
+Germany,Europe/Berlin,UTC+2
+France,Europe/Paris,UTC+2
+United Kingdom,Europe/London,UTC+1
+Italy,Europe/Rome,UTC+2
+Spain,Europe/Madrid,UTC+2
+Norway,Europe/Oslo,UTC+2
+Sweden,Europe/Stockholm,UTC+2
+Finland,Europe/Helsinki,UTC+3
+New Zealand,Pacific/Auckland,UTC+13
+Pakistan,Asia/Karachi,UTC+5
+Bangladesh,Asia/Dhaka,UTC+6
+Philippines,Asia/Manila,UTC+8
+Thailand,Asia/Bangkok,UTC+7
+Vietnam,Asia/Ho_Chi_Minh,UTC+7
+Nigeria,Africa/Lagos,UTC+1
+Kenya,Africa/Nairobi,UTC+3
+Ethiopia,Africa/Addis_Ababa,UTC+3
+Morocco,Africa/Casablanca,UTC+1
+Egypt,Africa/Cairo,UTC+2
+DR Congo 1,Africa/Kinshasa,UTC+1
+DR Congo 2,Africa/Lubumbashi,UTC+2
+Turkey,Europe/Istanbul,UTC+3
+Saudi Arabia,Asia/Riyadh,UTC+3
+United Arab Emirates,Asia/Dubai,UTC+4
+Iran,Asia/Tehran,UTC+3
+Iraq,Asia/Baghdad,UTC+3
+Ukraine,Europe/Kiev,UTC+2
+Poland,Europe/Warsaw,UTC+2
+Netherlands,Europe/Amsterdam,UTC+2
+Belgium,Europe/Brussels,UTC+2
+Switzerland,Europe/Zurich,UTC+2
+Portugal,Europe/Lisbon,UTC+1
+Greece,Europe/Athens,UTC+3
+Romania,Europe/Bucharest,UTC+3
+Hungary,Europe/Budapest,UTC+2
+Czech Republic,Europe/Prague,UTC+2
+Slovakia,Europe/Bratislava,UTC+2
+Israel,Asia/Jerusalem,UTC+3
+Singapore,Asia/Singapore,UTC+8
+Malaysia,Asia/Kuala_Lumpur,UTC+8
+Sri Lanka,Asia/Colombo,UTC+5
+Nepal,Asia/Kathmandu,UTC+5
+Bhutan,Asia/Thimphu,UTC+6
+Maldives,Indian/Maldives,UTC+5
+Afghanistan,Asia/Kabul,UTC+4
+Uzbekistan,Asia/Tashkent,UTC+5
+Turkmenistan,Asia/Ashgabat,UTC+5
+Tajikistan,Asia/Dushanbe,UTC+5
+Kyrgyzstan,Asia/Bishkek,UTC+6
+Mongolia,Asia/Ulaanbaatar,UTC+8
+North Korea,Asia/Pyongyang,UTC+9
+South Sudan,Africa/Juba,UTC+3
+Sudan,Africa/Khartoum,UTC+2
+Sierra Leone,Africa/Freetown,UTC+0
+Ghana,Africa/Accra,UTC+0
+Ivory Coast,Africa/Abidjan,UTC+0
+Senegal,Africa/Dakar,UTC+0
+Madagascar,Africa/Antananarivo,UTC+3
+Zambia,Africa/Lusaka,UTC+2
+Zimbabwe,Africa/Harare,UTC+2
+Malawi,Africa/Blantyre,UTC+2
+Mozambique,Africa/Maputo,UTC+2
+Angola,Africa/Luanda,UTC+1
+Cameroon,Africa/Douala,UTC+1
+Burkina Faso,Africa/Ouagadougou,UTC+0
+Mali,Africa/Bamako,UTC+0
+Niger,Africa/Niamey,UTC+1
+Chad,Africa/Ndjamena,UTC+1

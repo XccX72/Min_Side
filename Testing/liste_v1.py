@@ -73,8 +73,6 @@ def liste_main():
     window.mainloop()
 
 
-
-
 def liste_not_main(vindu):
     pass
 
