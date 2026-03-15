@@ -178,10 +178,11 @@ content_frame.grid(
 def keys(event):
     global lås
     key = event.keysym
+
+    if key == "Escape":
+        window.destroy()
     if key.lower() == "m":
         meny()
-    elif key == "Escape":
-        window.destroy()
     else:
         return
     """

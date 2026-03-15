@@ -1,8 +1,9 @@
-from datetime import datetime, UTC
+from datetime import datetime, UTC, timedelta
 import ttkbootstrap as ttk
 from zoneinfo import ZoneInfo, available_timezones
 import pandas as pd
 import os
+import time
 
 #-----------------------------------------------------------------------------
 #Pandas
@@ -19,8 +20,43 @@ df = pd.read_csv(filsti)
 #-----------------------------------------------------------------------------
 #Funksjoner
 #-----------------------------------------------------------------------------
+
+def norges_tid():
+    nå = datetime.now()
+    nå_klokkeslett = nå.strftime("%H:%M:%S")
+    tidssone_Norge_tid.config(text = nå_klokkeslett)
+    #after er tkinter metode for basically å vente med noe målt i millie sek
+    tidssone_Norge_tid.after(1000, norges_tid)
+
+def norges_dato():
+    nå = datetime.now()
+    nå_dato = nå.strftime("%d.%m.%Y")
+    Dato_Norge_label.config(text = nå_dato)
+    i_morgen = nå + timedelta(days = 1)
+    neste_midnatt = datetime(
+        year=i_morgen.year, 
+        month=i_morgen.month, 
+        day=i_morgen.day, 
+        hour=0, minute=0, second=1
+    )
+    ventetid_ms = int((neste_midnatt - nå).total_seconds()*1000)
+
+    Dato_Norge_label.after(ventetid_ms, norges_dato)
+    
 def valgfrisone_1():
-    pass
+    try:
+        land_valgt = valgfrisone1_combobox.get()
+        land_valgt_df = df.loc[df["Land"] == land_valgt, "UTC offset"].values[0]
+        if not land_valgt_df.empty:
+            utc_tid = datetime.now(UTC)
+            sone_tid = utc_tid + timedelta(hours = int(land_valgt_df))
+            klokkeslett = sone_tid.strftime("%H.%M.%S")
+            valgfrisone1_label.config(text = klokkeslett)
+            valgfrisone1_label.after(1000, valgfrisone_1)
+    except:
+        valgfrisone1_label.config(text = "Choose Country")
+        
+
 
 def valgfrisone_2():
     pass
@@ -34,11 +70,20 @@ def stoppeklokke_ferdig():
 def stoppeklokke_nullstill():
     pass
 
+def keys(event):
+    global lås
+    key = event.keysym
+
+    if key == "Escape":
+        content_frame.destroy()
+    else:
+        return
 
 #------------------------------------------------------------------------------
 #Tkinter
 #----------------------------------------------------------------------------
-def tkinter_del_time():
+def tkinter_del_time_main():
+    global valgfrisone1_button, valgfrisone2_button, valgfrisone1_combobox, valgfrisone2_combobox, content_frame, tidssone_Norge_tid, valgfrisone1_label, valgfrisone2_label, Dato_Norge_label, Stoppeklokke_label
     content_frame = ttk.Window(themename= "minty")
     content_frame.state("zoomed")
 
@@ -217,7 +262,11 @@ def tkinter_del_time():
         row = 1
     )
 
+    norges_tid()
+    norges_dato()
+    content_frame.bind_all("<KeyPress>", keys)
     content_frame.mainloop()
 
 
-tkinter_del_time()
+if __name__ == "__main__":
+    tkinter_del_time_main()
