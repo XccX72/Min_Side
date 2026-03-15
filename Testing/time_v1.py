@@ -9,12 +9,12 @@ import os
 #-----------------------------------------------------------------------------
 # Finn mappen der dette scriptet ligger
 
-"""denne_mappen = os.path.dirname(__file__)
+denne_mappen = os.path.dirname(__file__)
 
 # Gå ett hakk OPP (..), og så inn i csv_filer
-filsti = os.path.abspath(os.path.join(denne_mappen, "..", "csv_filer", "land_tidssoner.csv"))
+filsti = os.path.abspath(os.path.join(denne_mappen,  "land_tidssoner.csv"))
 
-df = pd.read_csv(filsti)"""
+df = pd.read_csv(filsti)
 
 #-----------------------------------------------------------------------------
 #Funksjoner
@@ -74,11 +74,12 @@ def tkinter_del_time():
     )
     #Valgfri sone 1 --------------------
     #Hva vi kan velge mellom
-    #elementlist = df["Land"].tolist
+    elementlist = df["Land"].tolist()
 
     valgfrisone1_combobox = ttk.Combobox(
         tidssone_frame,
-        state = "normal"
+        state = "normal",
+        values = elementlist
     )
     valgfrisone1_combobox.grid(
         columnspan= 2,
@@ -107,7 +108,8 @@ def tkinter_del_time():
     #Valgfri sone 2 --------------------
     valgfrisone2_combobox = ttk.Combobox(
         tidssone_frame,
-        state = "normal"
+        state = "normal",
+        values= elementlist
     )
     valgfrisone2_combobox.grid(
         columnspan= 2,
