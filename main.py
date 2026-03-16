@@ -1,5 +1,7 @@
 import ttkbootstrap as ttk
 import Sub_Pages.mol_kalkulator_v3 as mol_calc
+import Sub_Pages.time_v1 as time_file
+import Sub_Pages.informasjons_del_v1 as info_file
 
 window = ttk.Window(themename= "minty")
 window.state("zoomed")
@@ -19,12 +21,12 @@ def clear_content():
 #proff delen
 def proff(): #For informasjons knappen
     clear_content()
-    pass
+    info_file
 
 def klokke(): #For Time knappen
     clear_content()
-    pass
-
+    time_file.tkinter_del_time_main(content_frame)
+    
 #About me fane
 def about_me():
     clear_content()
@@ -196,6 +198,5 @@ def keys(event):
         mol_kalkulator()
     """
 window.bind_all("<KeyPress>", keys)
-
 window.focus_force()
 window.mainloop()

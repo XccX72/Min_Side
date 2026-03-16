@@ -1,6 +1,5 @@
 from datetime import datetime, UTC, timedelta
 import ttkbootstrap as ttk
-from zoneinfo import ZoneInfo, available_timezones
 import pandas as pd
 import os
 import time
@@ -13,14 +12,14 @@ import time
 denne_mappen = os.path.dirname(__file__)
 
 # Gå ett hakk OPP (..), og så inn i csv_filer
-filsti = os.path.abspath(os.path.join(denne_mappen,  "land_tidssoner.csv"))
+filsti = os.path.join(denne_mappen, "csv_filer", "land_tidssoner.csv")
 
 df = pd.read_csv(filsti)
 
 #-----------------------------------------------------------------------------
 #Funksjoner
 #-----------------------------------------------------------------------------
-
+#Norge tid og dato ----------------------------------------
 def norges_tid():
     nå = datetime.now()
     nå_klokkeslett = nå.strftime("%H:%M:%S")
@@ -42,50 +41,75 @@ def norges_dato():
     ventetid_ms = int((neste_midnatt - nå).total_seconds()*1000)
 
     Dato_Norge_label.after(ventetid_ms, norges_dato)
-    
+
+  # Valgtfrisone deler -----------------------------------------------------------------------------------  
 def valgfrisone_1():
     try:
-        land_valgt = valgfrisone1_combobox.get()
-        land_valgt_df = df.loc[df["Land"] == land_valgt, "UTC offset"].values[0]
+        land_valgt = valgfrisone1_combobox.get().strip()
+        land_valgt_df = df.loc[df["Land"].str.strip() == land_valgt, "offset"]
         if not land_valgt_df.empty:
             utc_tid = datetime.now(UTC)
-            sone_tid = utc_tid + timedelta(hours = int(land_valgt_df))
+
+            offset_tid = float(land_valgt_df.values[0])
+            sone_tid = utc_tid + timedelta(hours = offset_tid)
+
             klokkeslett = sone_tid.strftime("%H.%M.%S")
             valgfrisone1_label.config(text = klokkeslett)
             valgfrisone1_label.after(1000, valgfrisone_1)
     except:
         valgfrisone1_label.config(text = "Choose Country")
-        
-
 
 def valgfrisone_2():
-    pass
+    try:
+        land_valgt = valgfrisone2_combobox.get().strip()
+        land_valgt_df = df.loc[df["Land"].str.strip() == land_valgt, "offset"]
+        if not land_valgt_df.empty:
+            utc_tid = datetime.now(UTC)
 
-def stoppeklokke_start():
-    pass
+            offset_tid = float(land_valgt_df.values[0])
+            sone_tid = utc_tid + timedelta(hours = offset_tid)
+
+            klokkeslett = sone_tid.strftime("%H.%M.%S")
+            valgfrisone2_label.config(text = klokkeslett)
+            valgfrisone2_label.after(1000, valgfrisone_2)
+    except:
+        valgfrisone2_label.config(text = "Choose Country")
+
+#Stoppeklokke ------------------------------------------------------
+start = 0
+kjører = False
+
+def stoppeklokke_oppdater():
+    global start, kjører
+    if kjører:
+        nå = time.perf_counter() - start
+        Stoppeklokke_label.config(text = f"{nå:.2f} Sec")
+        Stoppeklokke_label.after(50, stoppeklokke_oppdater)
+
+def stoppeklokke_start():   
+    global kjører, start
+    if not kjører:
+        start = time.perf_counter()
+        kjører = True
+        stoppeklokke_oppdater()
+        
 
 def stoppeklokke_ferdig():
-    pass
+    global kjører
+    kjører = False
 
 def stoppeklokke_nullstill():
-    pass
-
-def keys(event):
-    global lås
-    key = event.keysym
-
-    if key == "Escape":
-        content_frame.destroy()
-    else:
-        return
+    global start, kjører
+    kjører = False
+    start = 0
+    Stoppeklokke_label.config(text = "0.00 Sec" )
 
 #------------------------------------------------------------------------------
 #Tkinter
 #----------------------------------------------------------------------------
-def tkinter_del_time_main():
+def tkinter_del_time_main(vindu):
     global valgfrisone1_button, valgfrisone2_button, valgfrisone1_combobox, valgfrisone2_combobox, content_frame, tidssone_Norge_tid, valgfrisone1_label, valgfrisone2_label, Dato_Norge_label, Stoppeklokke_label
-    content_frame = ttk.Window(themename= "minty")
-    content_frame.state("zoomed")
+    content_frame = vindu
 
     # For tidssone delen ------------------------------------------------------    
     tidssone_frame = ttk.Frame(
@@ -123,7 +147,7 @@ def tkinter_del_time_main():
 
     valgfrisone1_combobox = ttk.Combobox(
         tidssone_frame,
-        state = "normal",
+        state = "readonly", #"normal" skriv og velge "writeonly" er kun skriving
         values = elementlist
     )
     valgfrisone1_combobox.grid(
@@ -153,7 +177,7 @@ def tkinter_del_time_main():
     #Valgfri sone 2 --------------------
     valgfrisone2_combobox = ttk.Combobox(
         tidssone_frame,
-        state = "normal",
+        state = "readonly",
         values= elementlist
     )
     valgfrisone2_combobox.grid(
@@ -264,9 +288,5 @@ def tkinter_del_time_main():
 
     norges_tid()
     norges_dato()
-    content_frame.bind_all("<KeyPress>", keys)
-    content_frame.mainloop()
 
 
-if __name__ == "__main__":
-    tkinter_del_time_main()
