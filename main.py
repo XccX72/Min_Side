@@ -21,7 +21,7 @@ def clear_content():
 #proff delen
 def proff(): #For informasjons knappen
     clear_content()
-    info_file
+    info_file.tkinter_del(content_frame)
 
 def klokke(): #For Time knappen
     clear_content()
