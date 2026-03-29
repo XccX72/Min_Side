@@ -2,6 +2,7 @@ import ttkbootstrap as ttk
 import Sub_Pages.mol_kalkulator_v3 as mol_calc
 import Sub_Pages.time_v1 as time_file
 import Sub_Pages.informasjons_del_v1 as info_file
+import Sub_Pages.text as txt
 
 window = ttk.Window(themename= "minty")
 window.state("zoomed")
@@ -10,15 +11,14 @@ window.grid_columnconfigure(1, weight=1)
 window.grid_rowconfigure(1, weight=1)
 
 #-----------------------------------------------------
-#Funksjoner
+#Funksjoner om knapper
 #-----------------------------------------------------
-
 #Fjerne allerede lagde widgets
 def clear_content():
     for widget in content_frame.winfo_children():
         widget.destroy()
 
-#proff delen
+#For om csv leser
 def proff(): #For informasjons knappen
     clear_content()
     info_file.tkinter_del(content_frame)
@@ -30,29 +30,17 @@ def klokke(): #For Time knappen
 #About me fane
 def about_me():
     clear_content()
-    about_me_label_h1 = ttk.Label(
-        content_frame, 
-        text = "Hello", 
-        font= ("Arial", 20)
-    )
-    about_me_label_h1.pack()
+    txt.info_om_meg(content_frame)
 
-    about_me_label_t1 = ttk.Label(
-        content_frame,
-        text = "Hi, \nMy name is Danni Spriet and I am a 'programmer'. \nI'm studying programming via my high school, Olsvikåsen VGS ",
-        font = ("Arial", 12)
-    )
-    about_me_label_t1.pack()
+def about_me_viktig():
+    clear_content()
+    txt.viktig_om_meg(content_frame)
 
 #Help Keys Fane
 def help_keys():
     clear_content()
-    help_keys_label = ttk.Label(
-        content_frame, 
-        text = "M = Meny \nEsc = Close Program \nAbout Me = 1\nInformation = 2\nHelp Keys = 3\nMol Calc = 4", 
-        font= ("Arial", 20)
-    )
-    help_keys_label.pack()
+    txt.keys_info(content_frame)
+
 
 def mol_kalkulator():
     clear_content()
@@ -82,38 +70,31 @@ meny_frame = ttk.Frame(
 )
 meny_frame.grid(
     column= 0, 
-    row = 0, 
-    sticky= "ns"
-)
-
-
-meny_frame.grid()
-meny_mellomrom_label = ttk.Label(
-    meny_frame,
-    text = ""
+    row = 1, 
+    sticky= "n"
 )
 
 #About_me knapp
-meny_mellomrom_label.pack()
 meny_about_me_button = ttk.Button(
     meny_frame, 
-    text = "About Me (Hobbies etc)", 
+    text = "Om Meg (Hobbies etc)", 
     command= about_me, 
     width= 33
 )
 meny_about_me_button.pack(
+    fill = "x", 
     ipady = 20
 )
-proff_knapp = ttk.Button(
+meny_viktig_me_button = ttk.Button(
     meny_frame, 
-    text = "Information", 
-    command= proff, 
+    text = "Viktig om meg(CV etc)",
+    command= about_me_viktig,
     width= 33
 )
-proff_knapp.pack(
+meny_viktig_me_button.pack(
+    fill= "x",
     ipady = 20
 )
-
 
 #Hjelp_knapper knapp
 meny_help_knapper_button = ttk.Button(
@@ -123,6 +104,7 @@ meny_help_knapper_button = ttk.Button(
     text = "Help Keys"
     )
 meny_help_knapper_button.pack(
+    fill= "x",
     ipady = 20
 )
 
@@ -134,6 +116,7 @@ meny_mol_kalkulator_button = ttk.Button(
     text = "Mol Calc"
 )
 meny_mol_kalkulator_button.pack(
+    fill= "x",
     ipady = 20
 )
 
@@ -144,6 +127,17 @@ meny_time_button = ttk.Button(
     width= 33
 )
 meny_time_button.pack(
+    fill= "x",
+    ipady = 20
+)
+proff_knapp = ttk.Button(
+    meny_frame, 
+    text = "CSV Leser", 
+    command= proff, 
+    width= 33
+)
+proff_knapp.pack( 
+    fill= "x",
     ipady = 20
 )
 #-------------------------------------------------
@@ -158,9 +152,9 @@ meny_åpne = ttk.Button(
 meny_åpne.grid(
     row = 0, 
     column= 0, 
-    sticky= "nw"
+    sticky= "nw", 
+    ipady= 20, 
 )
-
 
 #----------------------------------------------------
 #Backend Frame
@@ -171,6 +165,7 @@ content_frame = ttk.Frame(
 content_frame.grid(
     row = 0,
     column= 1, 
+    rowspan= 2,
     sticky= "nwes"
 )
 

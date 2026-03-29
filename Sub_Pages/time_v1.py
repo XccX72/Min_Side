@@ -111,182 +111,254 @@ def tkinter_del_time_main(vindu):
     global valgfrisone1_button, valgfrisone2_button, valgfrisone1_combobox, valgfrisone2_combobox, content_frame, tidssone_Norge_tid, valgfrisone1_label, valgfrisone2_label, Dato_Norge_label, Stoppeklokke_label
     content_frame = vindu
 
-    # For tidssone delen ------------------------------------------------------    
+    # Konfigurer kolonner i hovedrammen så de deler plassen likt
+    content_frame.grid_columnconfigure(0, weight=1)
+    content_frame.grid_columnconfigure(1, weight=1)
+
+    # --- TIDSSONE DEL (Toppen) ---
     tidssone_frame = ttk.Frame(
-        content_frame
+        content_frame, 
+        padding=20
     )
     tidssone_frame.grid(
-        column = 0,
-        row = 0, 
-        columnspan= 2
+        column=0, 
+        row=0, 
+        columnspan=2, 
+        sticky="nsew"
     )
-    #Norge del ---------------------------------
+    tidssone_frame.grid_columnconfigure(
+        (0, 1, 2, 3, 4, 5), 
+        weight=1
+    )
+
+    # Norge del
     tidssone_Norge_label = ttk.Label(
-        tidssone_frame,
-        text = "Norway Time"
+        tidssone_frame, 
+        text="Norway Time", 
+        font=("Helvetica", 14, "bold")
     )
     tidssone_Norge_label.grid(
-        column= 0, 
-        row = 0,
-        rowspan= 2, 
-        columnspan= 3
+        column=0, 
+        row=0, 
+        rowspan=2, 
+        columnspan=3, 
+        pady=5
     )
+    
     tidssone_Norge_tid = ttk.Label(
-        tidssone_frame,
-        text = "Norway's Time",
+        tidssone_frame, 
+        text="Loading...", 
+        font=("Helvetica", 18)
     )
     tidssone_Norge_tid.grid(
-        column= 0,
-        row=1,
-        rowspan=2,
-        columnspan= 3
+        column=0, 
+        row=2, 
+        rowspan=2, 
+        columnspan=3, 
+        pady=5
     )
-    #Valgfri sone 1 --------------------
-    #Hva vi kan velge mellom
+
+    # Elementliste for comboboxer
     elementlist = df["Land"].tolist()
 
+    # Valgfri sone 1
     valgfrisone1_combobox = ttk.Combobox(
-        tidssone_frame,
-        state = "readonly", #"normal" skriv og velge "writeonly" er kun skriving
-        values = elementlist
+        tidssone_frame, 
+        state="readonly", 
+        values=elementlist, 
+        width=25
     )
     valgfrisone1_combobox.grid(
-        columnspan= 2,
-        column= 3,
-        row = 0
+        column=3, 
+        row=0, 
+        columnspan=2, 
+        padx=10, 
+        pady=10
     )
+    
     valgfrisone1_button = ttk.Button(
-        tidssone_frame,
-        text = "Perform",
-        command = valgfrisone_1
+        tidssone_frame, 
+        text="Perform", 
+        command=valgfrisone_1, 
+        width=15
     )
     valgfrisone1_button.grid(
-        column = 5,
-        row  = 0 
+        column=5, 
+        row=0, 
+        padx=5, 
+        pady=10
     )
+    
     valgfrisone1_label = ttk.Label(
-        tidssone_frame,
-        text = "Time Zone"
+        tidssone_frame, 
+        text="Choose Country", 
+        font=("Helvetica", 12)
     )
     valgfrisone1_label.grid(
-        column=3,
-        row = 1,
-        columnspan= 3
+        column=3, 
+        row=1, 
+        columnspan=3, 
+        pady=5
     )
 
-    #Valgfri sone 2 --------------------
+    # Valgfri sone 2
     valgfrisone2_combobox = ttk.Combobox(
-        tidssone_frame,
-        state = "readonly",
-        values= elementlist
+        tidssone_frame, 
+        state="readonly", 
+        values=elementlist, 
+        width=25
     )
     valgfrisone2_combobox.grid(
-        columnspan= 2,
-        column= 3,
-        row = 2
+        column=3, 
+        row=2, 
+        columnspan=2, 
+        padx=10, 
+        pady=10
     )
+    
     valgfrisone2_button = ttk.Button(
-        tidssone_frame,
-        text = "Perform",
-        command = valgfrisone_2
+        tidssone_frame, 
+        text="Perform", 
+        command=valgfrisone_2, 
+        width=15
     )
     valgfrisone2_button.grid(
-        column = 5,
-        row  = 2
+        column=5, 
+        row=2, 
+        padx=5, 
+        pady=10
     )
+    
     valgfrisone2_label = ttk.Label(
-        tidssone_frame,
-        text = "Time Zone"
+        tidssone_frame, 
+        text="Choose Country", 
+        font=("Helvetica", 12)
     )
     valgfrisone2_label.grid(
-        column=3,
-        row = 3,
-        columnspan = 3
+        column=3, 
+        row=3, 
+        columnspan=3, 
+        pady=5
     )
 
-    # Dato del ----------------------------------------------------------
+    # --- DATO DEL (Nedre Venstre) ---
     Dato_Frame = ttk.Frame(
-        content_frame
+        content_frame, 
+        padding=20
     )
     Dato_Frame.grid(
-        column = 0, 
-        row = 1
+        column=0, 
+        row=1, 
+        sticky="nsew"
+    )
+    Dato_Frame.grid_columnconfigure(
+        0, 
+        weight=1
     )
 
-    #Dato Norge
+    Dato_Norge_info = ttk.Label(
+        Dato_Frame, 
+        text="Today's Date:", 
+        font=("Helvetica", 12, "bold")
+    )
+    Dato_Norge_info.grid(
+        column=0, 
+        row=0, 
+        pady=5
+    )
+
     Dato_Norge_label = ttk.Label(
-        Dato_Frame,
-        text = "Norway Dato"
+        Dato_Frame, 
+        text="Norway Date", 
+        font=("Helvetica", 16)
     ) 
     Dato_Norge_label.grid(
-        column= 0,
-        row = 0
+        column=0, 
+        row=1, 
+        pady=10
     )
 
-    # Stoppeklokke del------------------------------------------------------
+    # --- STOPPEKLOKKE DEL (Nedre Høyre) ---
     Stoppeklokke_Frame = ttk.Frame(
-        content_frame
+        content_frame, 
+        padding=20
     )
     Stoppeklokke_Frame.grid(
-        column = 1, 
-        row = 1
+        column=1, 
+        row=1, 
+        sticky="nsew"
+    )
+    Stoppeklokke_Frame.grid_columnconfigure(
+        (0, 1, 2, 3, 4), 
+        weight=1
     )
 
-    #Label info
     Stoppeklokke_Label_info = ttk.Label(
-        Stoppeklokke_Frame,
-        text = "Stop Watch"
+        Stoppeklokke_Frame, 
+        text="Stop Watch", 
+        font=("Helvetica", 12, "bold")
     )
     Stoppeklokke_Label_info.grid(
-        column = 0,
-        row = 0, 
-        columnspan= 2
+        column=0, 
+        row=0, 
+        columnspan=5, 
+        pady=10
     )
 
-    #Start knapp
     Stoppeklokke_Start_Button = ttk.Button(
-        Stoppeklokke_Frame,
-        command = stoppeklokke_start,
-        text = "Start"
+        Stoppeklokke_Frame, 
+        command=stoppeklokke_start, 
+        text="Start", 
+        bootstyle="success"
     )
     Stoppeklokke_Start_Button.grid(
-        column = 2,
-        row = 0
+        column=0, 
+        row=1, 
+        padx=5, 
+        pady=5, 
+        sticky="ew"
     )
 
-    #Ferdig knapp
     Stoppeklokke_Ferdig_Button = ttk.Button(
-        Stoppeklokke_Frame,
-        command= stoppeklokke_ferdig,
-        text = "Finish"
+        Stoppeklokke_Frame, 
+        command=stoppeklokke_ferdig, 
+        text="Stop", 
+        bootstyle="danger"
     )
     Stoppeklokke_Ferdig_Button.grid(
-        column = 3,
-        row = 0
+        column=2, 
+        row=1, 
+        padx=5, 
+        pady=5, 
+        sticky="ew"
     )
 
-    #Nullstill knapp
     Stoppeklokke_Nullstill_Button = ttk.Button(
-        Stoppeklokke_Frame,
-        command = stoppeklokke_nullstill,
-        text = "Reset"
+        Stoppeklokke_Frame, 
+        command=stoppeklokke_nullstill, 
+        text="Reset", 
+        bootstyle="warning"
     )
     Stoppeklokke_Nullstill_Button.grid(
-        column = 4,
-        row = 0
+        column=4, 
+        row=1, 
+        padx=5, 
+        pady=5, 
+        sticky="ew"
     )
 
     Stoppeklokke_label = ttk.Label(
-        Stoppeklokke_Frame,
-        text = "Stop Watch Results"
+        Stoppeklokke_Frame, 
+        text="0.00 Sec", 
+        font=("Helvetica", 20, "bold")
     )
     Stoppeklokke_label.grid(
-        columnspan= 5,
-        column = 0,
-        row = 1
+        column=0, 
+        row=2, 
+        columnspan=5, 
+        pady=20
     )
 
+    # Start funksjonene
     norges_tid()
     norges_dato()
-
-

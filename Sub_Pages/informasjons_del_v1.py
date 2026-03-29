@@ -587,4 +587,7 @@ def tkinter_del(vindu):
     widgets_combobox_3.bind("<<ComboboxSelected>>", skjerm_2)
     widgets_combobox_4.bind("<<ComboboxSelected>>", skjerm_2)
     widgets_combobox_5.bind("<<ComboboxSelected>>", skjerm_2)
-    content_frame.mainloop()
+
+
+if __name__ == "__main__":
+    tkinter_del()
