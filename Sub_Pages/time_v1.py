@@ -309,7 +309,7 @@ def tkinter_del_time_main(vindu):
         Stoppeklokke_Frame, 
         command=stoppeklokke_start, 
         text="Start", 
-        bootstyle="success"
+        bootstyle="success-outline"
     )
     Stoppeklokke_Start_Button.grid(
         column=0, 
