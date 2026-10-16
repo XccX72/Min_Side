@@ -1,0 +1,41 @@
+String-navn,Norsk navn,Info om fargen, Om jeg liker det
+"black",Svart,Helt mørkt. RGB (0 0 0). Brukes ofte som bakgrunn.
+"white",Hvit,Maks styrke på alle kanaler. RGB (255 255 255).
+"red",Rød,Ren rødfarge. Brukes ofte for spilleren eller fiender.
+"green",Grønn,Standard grønn. RGB (0 255 0).
+"blue",Blå,Standard blå. RGB (0 0 255).
+"yellow",Gul,Kombinasjon av rød og grønn. Synes veldig godt.
+"orange",Oransje,Varm farge. God for "power-ups" eller advarsler.
+"pink",Rosa,Lys og tydelig farge.
+"purple",Lilla,Mørk og mystisk farge.
+"gray",Grå,Nøytral farge. Fin for hindringer eller vegger.
+"lightgray",Lysegrå,God for knapper eller grensesnitt (UI).
+"darkgray",Mørkegrå,Fin for skygger eller bakgrunner.
+"skyblue",Himmelblå,En lys og behagelig blåtone for bakgrunner., Meh
+"royalblue",Kongeblå,En dypere og mer intens blåfarge., Lowkey nice
+"forestgreen",Skogsgrønn,Mørkere grønn som ser mer naturlig ut., Egentlig mørkegrønn
+"gold",Gull,Ligner gul men er litt dypere. Perfekt for poeng/mynter.
+"maroon",Mørkerød,En dyp rødbrun farge.
+"cyan",Turkis,Lys blanding av grønn og blå.
+"magenta",Lys lilla,Veldig skarp farge som skiller seg ut.
+"brown",Brun,Jordfarge. Fin for bakken eller treverk.
+"indianred",Indisk rød,En dyp støvete rødfarge. Fin for murstein eller roligere toner.
+"crimson",Karmsinrød,En veldig intens og dyp rød. God for "Game Over"-skjermer.
+"lawngreen",Plen-grønn,En ekstremt lysende grønn. Perfekt for gift eller radioaktivitet.
+"seagreen",Sjøgrønn,En mørk beroligende grønnblå farge.
+"deepskyblue",Dyp himmelblå,En veldig klar og sterk lyseblå. God for magi-effekter.
+"midnightblue",Midnattsblå,Nesten svart men med et blåskjær. Fin for natt-himmelen.
+"khaki",Khaki,En sandaktig gulbrun farge. God for ørken-miljøer.
+"darkorange",Mørk oransje,En kraftig oransje som ligner på solnedgang eller ild.
+"orchid",Orkidé,En lys lillafarge. Fin for blomster eller magiske portaler.
+"thistle",Tistel,En veldig lys gråaktig lilla. God for nøytrale bakgrunner.
+"turquoise",Turkis,Klassisk blågrønn farge.
+"chartreuse",Gulgrønn,En farge som ligger midt mellom gul og grønn. Veldig synlig.
+"salmon",Laks,En myk rød-rosa farge.
+"sandybrown",Sandbrun,Lys brunfarge. Perfekt for sand eller treverk.
+"ivory",Elfenben,Nesten hvit men med et varmt skjær. Bedre for øynene enn ren hvit.
+"darkslategray",Mørk skifergrå,En veldig mørk gråfarge med et hint av grønt.
+"firebrick",Mursteinsrød,En mørk og stødig rødfarge.
+"lime",Lime,Den absolutt mest lysende grønnfargen. RGB (0 255 0).
+"dodgerblue",Dodger-blå,En sportslig og klar blåfarge.
+"hotpink",Sjokkrosa,En veldig intens rosa som garantert blir lagt merke til.

@@ -1,0 +1,134 @@
+==========================================================================
+            OVERSIKT OVER PYGAME_GUI WIDGETS (ELEMENTER)
+==========================================================================
+
+Dette dokumentet inneholder forklaringer og kode-eksempler for de mest brukte
+elementene i biblioteket 'pygame-gui'.
+
+FORUTSETNING:
+For at eksemplene skal fungere, må du ha en 'manager' definert i koden din:
+manager = pygame_gui.UIManager((bredde, høyde))
+
+--------------------------------------------------------------------------
+1. UI_BUTTON (Knapp)
+--------------------------------------------------------------------------
+Beskrivelse: En standard knapp som kan klikkes på. Støtter tekst, 
+hover-effekter og kan styles med farger og avrundede hjørner.
+
+Eksempel:
+knapp = pygame_gui.elements.UIButton(
+    relative_rect=pygame.Rect((350, 275), (100, 50)),
+    text='Klikk Meg',
+    manager=manager
+)
+
+--------------------------------------------------------------------------
+2. UI_TEXT_ENTRY_LINE (Tekstfelt / Input)
+--------------------------------------------------------------------------
+Beskrivelse: Et felt hvor brukeren kan skrive inn én linje med tekst 
+(f.eks. brukernavn eller poengsum).
+
+Eksempel:
+input_felt = pygame_gui.elements.UITextEntryLine(
+    relative_rect=pygame.Rect((300, 150), (200, 35)),
+    manager=manager
+)
+
+--------------------------------------------------------------------------
+3. UI_LABEL (Tekstfelt / Overskrift)
+--------------------------------------------------------------------------
+Beskrivelse: Brukes for å vise enkel tekst på skjermen som brukeren 
+ikke skal redigere.
+
+Eksempel:
+overskrift = pygame_gui.elements.UILabel(
+    relative_rect=pygame.Rect((300, 100), (200, 50)),
+    text='Velkommen til spillet',
+    manager=manager
+)
+
+--------------------------------------------------------------------------
+4. UI_DROP_DOWN_MENU (Rullegardinmeny)
+--------------------------------------------------------------------------
+Beskrivelse: Lar brukeren velge ett alternativ fra en liste som 
+felles ut når man klikker.
+
+Eksempel:
+meny = pygame_gui.elements.UIDropDownMenu(
+    options_list=['Enkel', 'Middels', 'Vanskelig'],
+    starting_option='Middels',
+    relative_rect=pygame.Rect((300, 200), (200, 30)),
+    manager=manager
+)
+
+--------------------------------------------------------------------------
+5. UI_HORIZONTAL_SLIDER (Skyveknapp / Slider)
+--------------------------------------------------------------------------
+Beskrivelse: En horisontal stolpe som lar brukeren velge en verdi 
+innenfor et område (f.eks. volum eller lysstyrke).
+
+Eksempel:
+volum_slider = pygame_gui.elements.UIHorizontalSlider(
+    relative_rect=pygame.Rect((300, 400), (200, 30)),
+    start_value=50.0,
+    value_range=(0.0, 100.0),
+    manager=manager
+)
+
+--------------------------------------------------------------------------
+6. UI_TEXT_BOX (Tekstboks / Informasjonsfelt)
+--------------------------------------------------------------------------
+Beskrivelse: En boks for lengre tekster. Støtter grunnleggende HTML-formatering 
+som <b>fet skrift</b> og <i>kursiv</i>. Har innebygd scrollbar hvis teksten er lang.
+
+Eksempel:
+info_boks = pygame_gui.elements.UITextBox(
+    html_text="Dette er en <b>viktig</b> beskjed som kan gå over flere linjer.",
+    relative_rect=pygame.Rect((50, 50), (200, 150)),
+    manager=manager
+)
+
+--------------------------------------------------------------------------
+7. UI_WINDOW (Vindu / Popup)
+--------------------------------------------------------------------------
+Beskrivelse: Et flyttbart vindu som kan inneholde andre widgets. 
+Har tittel-linje og lukkeknapp (X).
+
+Eksempel:
+pop_up = pygame_gui.elements.UIWindow(
+    rect=pygame.Rect((100, 100), (300, 200)),
+    manager=manager,
+    window_display_title='Innstillinger'
+)
+
+--------------------------------------------------------------------------
+8. UI_SELECTION_LIST (Valgliste)
+--------------------------------------------------------------------------
+Beskrivelse: En liste med elementer som alltid er synlig, der brukeren 
+kan trykke for å velge ett eller flere elementer.
+
+Eksempel:
+liste = pygame_gui.elements.UISelectionList(
+    relative_rect=pygame.Rect((500, 100), (150, 200)),
+    item_list=['Sverd', 'Skjold', 'Helse-drikk', 'Kart'],
+    manager=manager
+)
+
+--------------------------------------------------------------------------
+9. UI_IMAGE (Bilde-widget)
+--------------------------------------------------------------------------
+Beskrivelse: En enkel måte å vise et bilde (Surface) som en del av UI-en.
+
+Eksempel:
+logo_bilde = pygame_gui.elements.UIImage(
+    relative_rect=pygame.Rect((10, 10), (100, 100)),
+    image_surface=mitt_pygame_bilde,
+    manager=manager
+)
+
+==========================================================================
+TIPS FOR PLASSERING:
+relative_rect=pygame.Rect((x, y), (bredde, høyde))
+- x og y er piksler fra øverste venstre hjørne av manageren eller vinduet det 
+  ligger i.
+==========================================================================

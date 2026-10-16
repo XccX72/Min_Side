@@ -3,9 +3,10 @@
     <head>
         <title> Heihei</title>
         <meta charset="UTF-8">
-        <meta name = "viewport" content="" width = device-width, initial-scale=1.0>
+        <meta name="viewport" content="" width = device-width, initial-scale=1.0>
 
-        <style>
+        <!-- style er basically egentlig bare en css file-->
+        <style> 
             body { 
                 font-family: sans-serif; 
                 line-height: 1.6;
@@ -32,14 +33,20 @@
                 width: 100%;
                 max-width: 400px;
             }
+
         </style>
+
+        <!-- for å import css fil-->
+        <link rel="stylesheet" href="styles/styling.css">
+       
     </head>
 
     <body>
         <h1> Eksempler På Widgets [h1 tittel] </h1>
         
+        <!-- Section == tk.Frame-->
         <section class = "widget-container">
-            ### Interaktive html- elementer
+            <!-- Interaktive html- elementer -->
             <details>
                 <summary>Mer Info</summary> 
                 <p> Dette er en innebygd HTML funksjon som er en "accordion" uten JV</p>
@@ -58,7 +65,7 @@
 
         <section class = "widget-container">
             ### Dynamisk widget (Canvas)
-            <p> Denne sirkelen er tegner med JV på et element</p>
+            <p> Denne sirkelen er tegner uten JS på et element</p>
             <canvas id = "minGrafikk" width = "200" height = "100"> </canvas>
         </section>
 
@@ -72,6 +79,16 @@
             ctx.fill();
             ctx.stroke();
         </script>
+
+        <!-- linke til javascript-->
+         <script src="scripts/main.js"></script>
+
+
+        <div>
+            <label> heihei</label>
+
+
+        </div>
 
     </body>
 

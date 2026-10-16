@@ -4,6 +4,43 @@ import ttkbootstrap as ttk
 #Når man oppretter window
 window = ttk.Window(themename="minty")
 
+"""
+Alle tema innenfor themename = "minty"
+ved bruk av bootstyle =
+
+Eks:
+a = ttk.Button(
+    bootstyle = "x"
+)
+
+Mulige ting:
+    success = Grønn
+    danger = Rød
+    warning = Gul/Oransje
+    info = Blå
+    primary = Standarfarge (minty)
+    secondary = Grå
+
+Ekstra:
+Hvis boks skal være hvit og outline skal være farge, og if cursor på boks så 
+hele boks farge
+
+Eks:
+a = ttk.Button(
+    bootstyle = "x-outline"
+)
+
+    
+
+
+"""
+
+
+
+
+
+
+
 #Andre temaer
 """
 Light Themes:

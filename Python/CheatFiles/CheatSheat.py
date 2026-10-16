@@ -278,7 +278,7 @@ print(ob1.x)
 #Sletter object i klasse
 del ob1
 #sletter parameter i object
-del ob1.parameter
+del ob1.x
 
 #For tom klasse bruk pass
 class Person:

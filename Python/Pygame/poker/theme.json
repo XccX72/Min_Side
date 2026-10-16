@@ -1,0 +1,95 @@
+{
+    "#overskrift": {
+        "font": {
+            "size": "48",
+            "bold": "1",
+            "name": "arial"
+        },
+        "colours": {
+            "normal_text": "#E74C3C"
+        }
+    },
+    "button": {
+        "colours": {
+            "normal_bg": "#27ae60",
+            "hovered_bg": "#2ecc71",
+            "active_bg": "#1e8449",
+            "normal_text": "#ffffff",
+            "normal_border": "#27ae60"
+        },
+        "shape": "rounded_rectangle",
+        "shape_corner_radius": "30",
+        "border_width": "0"
+    },
+    "#tittel": {
+        "font": {
+            "size": "30",
+            "bold": "1",
+            "name": "arial"
+        },
+        "colours": {
+            "normal_text": "#E74C3C"
+        }
+    },
+    "#kort_rød": {
+    "font": {
+        "name": "arial",
+        "size": "25",
+        "bold": "1"
+    },
+    "colours": {
+        "normal_text": "#E74C3C",
+        "normal_bg": "#FFFFFF",
+        "normal_border": "#000000",
+        "hovered_bg": "#FFFFFF",
+        "hovered_border": "#E74C3C",
+        "hovered_text": "#E74C3C"
+        },
+        "border_width": "2",
+        "shadow_width": "5",
+        "hovered_shadow_width": "50"
+    },
+    "#kort_svart": {
+        "font": {
+            "name": "arial",
+            "size": "25",
+            "bold": "1"
+        },
+        "colours": {
+            "normal_text": "#000000",
+            "normal_bg": "#FFFFFF", 
+            "normal_border": "#000000",
+            "hovered_bg": "#FFFFFF",
+            "hovered_border":"#000000",
+            "hovered_text": "#000000"
+        },
+        "border_width": "2",
+        "shadow_width": "5",
+        "hovered_shadow_width": "50"
+    },
+    "#text": {
+        "font": {
+            "name": "arial",
+            "size": "25",
+            "bold": "1"
+        },
+        "colours": {
+            "normal_text": "#000000",
+            "normal_bg": "#FFFFFF", 
+            "normal_border": "#000000"
+        },
+        "border_width": 2
+    },
+    "#knapp": {
+        "colours": {
+            "normal_bg": "#FFFFFF",
+            "hovered_bg": "#FFFFFF",
+            "active_bg": "#FFFFFF",
+            "normal_text": "#000000",
+            "normal_border": "#000000"
+        },
+        "shape": "rounded_rectangle",
+        "shape_corner_radius": "30",
+        "border_width": "0"
+    }
+}
